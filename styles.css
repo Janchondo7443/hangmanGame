@@ -1,0 +1,198 @@
+* body html ::before ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+   flex-direction: column;
+   align-items: center;
+    /* display: grid;
+    place-items: center; */
+    background: linear-gradient(black, rgb(3, 145, 184), black)
+}
+main{
+    display: flex;
+    flex-direction: column;
+   
+}
+.title{
+    color: aquamarine;
+}
+.game {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr .5fr 1fr;
+    grid-template-areas:
+        "answer"
+        "fails"
+        "alph";
+}
+
+.fails {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    grid-area: "fails"; 
+}
+
+.wrong {
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    margin: 10px;
+    font-size: 50px;
+    text-align: center;
+    border-radius: 50%;
+    background-color:rgb(2, 2, 2) ;
+    box-shadow: 5px 5px 10px #fefcfc inset;
+}
+
+.answer {
+    
+    width: 90%;
+    min-height: 250px;
+    margin-top: 30px ;
+    padding: 15px 15px 20px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(26, 123, 140) ;
+    border-radius: 20px;
+    grid-area: answer;
+    box-shadow: 0px 0px 25px #000000 inset;
+    border: 1px solid;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: fit-content;
+    margin: 15px 20px;
+}
+
+section .answers {
+    color: rgb(2, 6, 243);
+    opacity: .70;
+    width: 60px;
+    height: 45px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    margin: 0 10px;
+    text-align: center;
+    font-size: 2.5em;
+    transition: ease .5s;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.8);
+    background-color:rgb(67, 187, 177); 
+    border-radius: 10px;
+    text-shadow: 2px 5px 5px black;
+}
+
+.alph {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color:rgb(26, 123, 140);
+    width: 90%;
+    height: 250px;
+    padding: 20px;
+    grid-area: alph;
+    box-shadow: 0px 0px 30px #000000 inset;
+    border-radius: 20px;
+    border:1px solid black
+}
+
+.popUp {
+    width: 350px;
+    height: 260px;
+    position: absolute;
+    top: 35%;
+    left:35%;
+    border: 1px solid black;
+    display: none;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    border-radius: 10%;
+    z-index: 1;
+    background-color: rgba(15, 37, 44, .9);
+    box-shadow:  10px 5px 25px rgba(0, 0, 0, 0.8);
+    transition: ease-in-out 0.3s;
+}
+
+.popUp h2 {
+    line-height: 30px;
+    position: absolute;
+    /* top: 30px; */
+}
+
+button {
+    position:relative;
+    top:145px;
+    /* bottom :130px; */
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 120px;
+    font-size: 1.7em;
+    background-color: rgb(126, 14, 14);
+    color: rgb(25, 121, 84);
+    box-shadow: inset 0px 0px 25px rgb(0, 0, 0);
+    transition: ease-in-out 0.3s;
+    z-index: 2;
+    opacity: .90;
+    text-shadow: 0px 5px 5px rgb(0, 0, 0);
+}
+
+button:hover {
+    background-color: rgb(4, 236, 43);
+    width: 120px;
+    height: 120px;
+    text-shadow: 0px 5px 5px rgb(0, 0, 0);
+    color: rgb(11, 245, 249);
+    box-shadow: inset 0px 0px 25px rgb(0, 0, 0);
+    transition: ease-in-out 0.3s;
+}
+
+.answer .space {
+    width: 5%;
+    height: 30px;
+    margin: 0 10px;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.letter {
+    color: rgb(12, 2, 121);
+    border: 2px solid black;
+    background-color:rgb(92, 182, 194);
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    margin: 5px 5px 0 0;
+    border-radius: 10px;
+    font-size: 2em;
+    /* box-shadow: 0px 5px 5px rgb(76, 88, 92) ; */
+    transition: ease-in-out 0.3s;
+    transform: scale(1.25);
+    text-shadow: 1px 5px 4px  rgb(0, 0, 0);
+    box-shadow: inset 5px 5px 15px rgb(1, 39, 67);
+}
+
+.letter:hover {
+    position: relative;
+    z-index: 1;
+    background-color: rgb(255, 255, 255);
+    transform: scale(1.25);
+    font-size: 3.2em;
+    box-shadow: 10px 15px 15px rgba(86, 88, 89, 0.8);
+    transition: ease-in-out 0.3s;
+}
